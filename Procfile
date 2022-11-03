@@ -1,1 +1,1 @@
-worker: npm build
+worker: ts-node ./src/Bot.ts

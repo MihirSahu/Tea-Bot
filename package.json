@@ -12,6 +12,6 @@
   },
   "scripts": {
     "start": "nodemon src/Bot.ts",
-    "build": "tsc"
+    "postinstall": "tsc"
   }
 }

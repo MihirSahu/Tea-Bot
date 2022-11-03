@@ -1,1 +1,1 @@
-worker: node ./src/Bot.ts
+worker: yarn ./src/Bot.ts

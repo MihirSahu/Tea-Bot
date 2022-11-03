@@ -12,6 +12,7 @@
   },
   "scripts": {
     "start": "nodemon src/Bot.ts",
-    "postinstall": "tsc"
+    "postinstall": "tsc",
+    "deploy": "git add . && git commit -m Heroku && git push heroku main"
   }
 }

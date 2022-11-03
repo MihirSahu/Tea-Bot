@@ -14,14 +14,15 @@ console.log(`Discord token: ${token}`);
 
 export const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildScheduledEvents]});
 
-// const channelId = '1037586167111094372';
-const channelId = '1037611770375852072';
+const channelId = '1037586167111094372';
+//test tea channel:
+// const channelId = '1037611770375852072';
 
 client.once("ready", async c => {
     console.log('BOT ONLINE')
     let guild: Guild | null | void  = await c.guilds.cache.get(guildId)
     const teaChannel = guild?.channels.cache.get(channelId) as TextChannel;
-    
+
     PurgeTea(teaChannel)
 });
 

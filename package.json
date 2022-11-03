@@ -11,7 +11,7 @@
     "typescript": "^4.8.4"
   },
   "scripts": {
-    "start": "ts-node src/Bot.ts",
+    "start": "node src/Bot.ts",
     "postinstall": "tsc",
     "deploy": "git add . && git commit -m Heroku && git push heroku main"
   }

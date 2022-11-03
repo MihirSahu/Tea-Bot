@@ -1,7 +1,6 @@
 import { Client, GatewayIntentBits, Guild, TextChannel } from "discord.js";
+import {PurgeTea} from './Purge'
 import * as dotenv from "dotenv";
-
-const cronJob = require('node-cron');
 
 dotenv.config();
 
@@ -22,16 +21,8 @@ client.once("ready", async c => {
     console.log('BOT ONLINE')
     let guild: Guild | null | void  = await c.guilds.cache.get(guildId)
     const teaChannel = guild?.channels.cache.get(channelId) as TextChannel;
-
-    let fetched;
-    do{
-        console.log('deleting messages')
-        fetched = await teaChannel.messages.fetch({limit: 100});
-        await teaChannel.bulkDelete(100).then(() => {
-            teaChannel.send('deleted 100 messages');
-        })
-    }
-    while(fetched.size >= 2)
+    
+    PurgeTea(teaChannel)
 });
 
 
